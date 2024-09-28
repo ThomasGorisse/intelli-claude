@@ -1,9 +1,9 @@
-package com.github.thomasgorisse.intelliclaude.services
+package com.gorisse.thomas.intelliclaude.services
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
-import com.github.thomasgorisse.intelliclaude.MyBundle
+import com.gorisse.thomas.intelliclaude.MyBundle
 
 @Service(Service.Level.PROJECT)
 class MyProjectService(project: Project) {

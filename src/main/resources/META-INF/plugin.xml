@@ -1,18 +1,29 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.thomasgorisse.intelliclaude</id>
-    <name>intelli-claude</name>
-    <vendor>thomasgorisse</vendor>
+    <id>com.gorisse.thomas.intelliclaude</id>
+    <name>IntelliClaude</name>
+    <vendor>Thomas Gorisse</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.thomasgorisse.intelliclaude.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <toolWindow factoryClass="com.gorisse.thomas.intelliclaude.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.thomasgorisse.intelliclaude.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+        <listener class="com.gorisse.thomas.intelliclaude.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
+
+    <actions>
+        <action id="IntelliClaude.AskClaude"
+            class="com.gorisse.thomas.intelliclaude.actions.ClaudePromptAction"
+            text="Ask Claude"
+            description="Send a prompt to Claude and insert the response">
+            <add-to-group group-id="EditMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt C"/>
+        </action>
+    </actions>
 </idea-plugin>

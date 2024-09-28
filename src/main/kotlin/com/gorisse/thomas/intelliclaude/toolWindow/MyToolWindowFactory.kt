@@ -1,4 +1,4 @@
-package com.github.thomasgorisse.intelliclaude.toolWindow
+package com.gorisse.thomas.intelliclaude.toolWindow
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.diagnostic.thisLogger
@@ -8,8 +8,8 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.thomasgorisse.intelliclaude.MyBundle
-import com.github.thomasgorisse.intelliclaude.services.MyProjectService
+import com.gorisse.thomas.intelliclaude.MyBundle
+import com.gorisse.thomas.intelliclaude.services.MyProjectService
 import javax.swing.JButton
 
 

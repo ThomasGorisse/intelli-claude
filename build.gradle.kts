@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.changelog) // Gradle Changelog Plugin
     alias(libs.plugins.qodana) // Gradle Qodana Plugin
     alias(libs.plugins.kover) // Gradle Kover Plugin
+    kotlin("plugin.serialization") version "1.8.0"
 }
 
 group = providers.gradleProperty("pluginGroup").get()
@@ -22,6 +23,9 @@ kotlin {
 // Configure project's dependencies
 repositories {
     mavenCentral()
+    google()  // Add this line to include Google's Maven repository
+    maven { url = uri("https://plugins.gradle.org/m2/") }
+    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven") }
 
     // IntelliJ Platform Gradle Plugin Repositories Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-repositories-extension.html
     intellijPlatform {
@@ -29,9 +33,35 @@ repositories {
     }
 }
 
+
+// Dependencies are managed with Gradle version catalog
+dependencies {
+    testImplementation(libs.junit)
+
+    implementation("io.ktor:ktor-client-core:2.3.2")
+    implementation("io.ktor:ktor-client-apache:2.3.2")
+    implementation("io.ktor:ktor-client-json:2.3.2")
+    implementation("io.ktor:ktor-client-serialization:2.3.2")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.2")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+
+
+}
+
 // Dependencies are managed with Gradle version catalog - read more: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
 dependencies {
     testImplementation(libs.junit)
+
+    implementation("io.ktor:ktor-client-core:2.3.2")
+    implementation("io.ktor:ktor-client-apache:2.3.2")
+    implementation("io.ktor:ktor-client-json:2.3.2")
+    implementation("io.ktor:ktor-client-serialization:2.3.2")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.2")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 
     // IntelliJ Platform Gradle Plugin Dependencies Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-dependencies-extension.html
     intellijPlatform {

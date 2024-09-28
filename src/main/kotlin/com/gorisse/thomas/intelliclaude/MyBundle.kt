@@ -1,4 +1,4 @@
-package com.github.thomasgorisse.intelliclaude
+package com.gorisse.thomas.intelliclaude
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

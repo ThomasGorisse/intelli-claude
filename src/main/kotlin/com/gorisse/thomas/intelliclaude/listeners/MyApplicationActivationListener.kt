@@ -1,4 +1,4 @@
-package com.github.thomasgorisse.intelliclaude.listeners
+package com.gorisse.thomas.intelliclaude.listeners
 
 import com.intellij.openapi.application.ApplicationActivationListener
 import com.intellij.openapi.diagnostic.thisLogger
