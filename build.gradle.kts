@@ -39,7 +39,7 @@ dependencies {
     testImplementation(libs.junit)
 
     implementation("io.ktor:ktor-client-core:2.3.2")
-    implementation("io.ktor:ktor-client-apache:2.3.2")
+    implementation("io.ktor:ktor-client-apache:2.3.12")
     implementation("io.ktor:ktor-client-json:2.3.2")
     implementation("io.ktor:ktor-client-serialization:2.3.2")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.2")
@@ -55,7 +55,7 @@ dependencies {
     testImplementation(libs.junit)
 
     implementation("io.ktor:ktor-client-core:2.3.2")
-    implementation("io.ktor:ktor-client-apache:2.3.2")
+    implementation("io.ktor:ktor-client-apache:2.3.12")
     implementation("io.ktor:ktor-client-json:2.3.2")
     implementation("io.ktor:ktor-client-serialization:2.3.2")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.2")
